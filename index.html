@@ -1,80 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 탐구 프로젝트 공유 플랫폼</title>
+    <title>Tetris</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>학생 탐구 프로젝트</h1>
-            <ul>
-                <li><a href="#" id="newProjectBtn">새 프로젝트 등록</a></li>
-                <li><a href="#" id="viewProjectsBtn">프로젝트 목록</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- 프로젝트 등록 폼 -->
-        <section id="projectForm" class="hidden">
-            <h2>새 프로젝트 등록</h2>
-            <form id="uploadForm">
-                <input type="hidden" id="projectId">
-                <div class="form-group">
-                    <label for="studentName">학생 이름:</label>
-                    <input type="text" id="studentName" required>
-                </div>
-                <div class="form-group">
-                    <label for="projectTitle">프로젝트 제목:</label>
-                    <input type="text" id="projectTitle" required>
-                </div>
-                <div class="form-group">
-                    <label for="projectDescription">프로젝트 설명:</label>
-                    <textarea id="projectDescription" required></textarea>
-                </div>
-                <div class="button-group">
-                    <button type="submit" id="submitBtn">등록하기</button>
-                    <button type="button" id="cancelBtn" class="secondary hidden">취소</button>
-                </div>
-            </form>
-        </section>
-
-        <!-- 프로젝트 목록 -->
-        <section id="projectList">
-            <h2>등록된 프로젝트</h2>
-            <div id="projects"></div>
-        </section>
-    </main>
-
-    <!-- 댓글 모달 -->
-    <div id="commentModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>댓글 작성하기</h3>
-            <div id="projectDetails"></div>
-            <div id="comments"></div>
-            <form id="commentForm">
-                <textarea id="commentText" placeholder="의견을 작성해주세요" required></textarea>
-                <button type="submit">댓글 등록</button>
-            </form>
-        </div>
+    <h1>Tetris</h1>
+    <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+    <div>
+        Score: <span id="score">0</span>
     </div>
-
-    <!-- 삭제 확인 모달 -->
-    <div id="deleteModal" class="modal hidden">
-        <div class="modal-content">
-            <h3>프로젝트 삭제</h3>
-            <p>정말로 이 프로젝트를 삭제하시겠습니까?</p>
-            <div class="button-group">
-                <button id="confirmDelete" class="danger">삭제</button>
-                <button id="cancelDelete" class="secondary">취소</button>
-            </div>
-        </div>
+    <div id="gameOver" style="display:none;">
+        Game Over!
     </div>
-
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
